@@ -40,16 +40,16 @@
 </template>
 
 <script>
-  import backBtnGroup from './backBtnGroup'
-  export default {
-    name: 'errContent',
-    components: {
-      backBtnGroup
-    },
-    props: {
-      code: String,
-      desc: String,
-      src: null // 任何类型
-    }
+import backBtnGroup from './backBtnGroup'
+export default {
+  name: 'errContent',
+  components: {
+    backBtnGroup
+  },
+  props: {
+    code: String,
+    desc: String,
+    src: null // 任何类型
   }
+}
 </script>

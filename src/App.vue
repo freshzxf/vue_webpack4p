@@ -10,17 +10,18 @@
 </template>
 <script>
 
-  export default {
-    data () {
-      return {}
-    },
-    components: {},
-    mounted () {
+export default {
+  data () {
+    return {}
+  },
 
-    },
-    beforeDestroy () {
+  components: {},
+  mounted () {
 
-    },
-    methods: {}
-  }
+  },
+  beforeDestroy () {
+
+  },
+  methods: {}
+}
 </script>

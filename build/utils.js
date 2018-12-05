@@ -39,7 +39,8 @@ exports.cssLoaders = function (options) {
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
+      plugins: [require('autoprefixer')]
     }
   }
 
@@ -63,7 +64,6 @@ exports.cssLoaders = function (options) {
    * 生成与mini-css-extract-plugin一起使用的loader字符串
    */
   function generateLoaders (loader, loaderOptions) {
-
     // 生成loaders数组（根据options.usePostCSS配置项判断是否加入postcssLoader）
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
@@ -86,22 +86,22 @@ exports.cssLoaders = function (options) {
 
     // options配置中如果定义了extract（非false值即可）,那么就调用mini-css-extract-plugin
     // (生产环境下就是这种配置)
-    /*if (options.extract) {
+    /* if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
         fallback: 'vue-style-loader'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)
-    }*/
+    } */
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less',{javascriptEnabled: true}),
-    sass: generateLoaders('sass', {indentedSyntax: true}),
+    less: generateLoaders('less', { javascriptEnabled: true }),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')

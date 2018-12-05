@@ -12,6 +12,7 @@ const RouterConfig = {
   mode: 'history',
   routes: Routers
 }
+
 const router = new VueRouter(RouterConfig)
 
 router.beforeEach((to, from, next) => {

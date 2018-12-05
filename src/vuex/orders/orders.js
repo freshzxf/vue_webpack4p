@@ -38,24 +38,24 @@ const getters = {
 }
 
 const mutations = {
-  [types.UPDATE_ORDERSLIST](state, payload) {
+  [types.UPDATE_ORDERSLIST] (state, payload) {
     state.ordersList = payload.ordersList
   },
-  [types.UPDATE_FOODSMENU](state, payload) {
+  [types.UPDATE_FOODSMENU] (state, payload) {
     state.foodsMenu = payload.foodsMenu
   },
-  [types.SHOW_ORDERSLIST](state, payload) {
+  [types.SHOW_ORDERSLIST] (state, payload) {
     state.show = payload.show
   },
   // 修改食材订购量
-  editFoodData(state, data) {
+  editFoodData (state, data) {
     state.foodsMenu[data.idx].content[data.idx1].content[data.idx2].amount = data.currentAmount
   }
 }
 
 const actions = {
   // 异步获取订单列表数据
-  async initList({dispatch, commit, state}, param) {
+  async initList ({ dispatch, commit, state }, param) {
     // 设置公共loading
     dispatch('showLoading')
     // 异步修改shop对象
@@ -80,7 +80,7 @@ const actions = {
     })
   },
   // 异步获取食材列表数据
-  async initFoodMenu({dispatch, commit, state}, param) {
+  async initFoodMenu ({ dispatch, commit, state }, param) {
     // 设置公共loading
     dispatch('showLoading')
     // 异步修改shop对象

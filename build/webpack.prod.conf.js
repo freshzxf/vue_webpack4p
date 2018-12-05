@@ -43,7 +43,7 @@ const webpackConfig = merge(baseWebpackConfig, {
    */
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
-    /*new webpack.DefinePlugin({
+    /* new webpack.DefinePlugin({
       'process.env': env
     }),
     new UglifyJsPlugin({
@@ -54,20 +54,20 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       sourceMap: config.build.productionSourceMap,
       parallel: true
-    }),*/
+    }), */
     // extract css into its own file
-    /*new ExtractTextPlugin({
+    /* new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
-    }),*/
+    }), */
 
     new MiniCssExtractPlugin({
       // 输出到单独的 css 文件夹下
-      filename: "static/css/[name].[chunkhash].css"
+      filename: 'static/css/[name].[chunkhash].css'
     }),
 
     // Compress extracted CSS. We are using this plugin so that possible
@@ -75,7 +75,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 新版optimize-css-assets-webpack-plugin意不支持safe配置，可使用postcss-safe-parser替代（暂时未使用）
     new OptimizeCSSPlugin({
       cssProcessorOptions: config.build.productionSourceMap
-        ? {map: {inline: false}}
+        ? { map: { inline: false } }
         : null
     }),
     // generate dist index.html with correct asset hash for caching.
@@ -99,7 +99,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
-    /*// split vendor js into its own file
+    /* // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks(module) {
@@ -127,7 +127,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       async: 'vendor-async',
       children: true,
       minChunks: 3
-    }),*/
+    }), */
 
     // copy custom static assets
     new CopyWebpackPlugin([
@@ -144,17 +144,17 @@ const webpackConfig = merge(baseWebpackConfig, {
    */
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
       cacheGroups: {
         // 提取 node_modules 中代码
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
+          name: 'vendors',
+          chunks: 'all'
         },
         commons: {
           // async 设置提取异步代码中的公用代码
-          chunks: "async",
+          chunks: 'async',
           name: 'commons-async',
           /**
            * minSize 默认为 30000

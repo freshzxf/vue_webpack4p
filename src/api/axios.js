@@ -144,7 +144,7 @@ export default axios
  * @param param
  * @returns {Promise<AxiosResponse>}
  */
-export function get(urlLink, param) {
+export function get (urlLink, param) {
   const url = urlLink
   const data = Object.assign({}, commonParams, param)
 
@@ -167,7 +167,7 @@ export function get(urlLink, param) {
  * @param param
  * @returns {Promise<AxiosResponse>}
  */
-export function post(urlLink, param) {
+export function post (urlLink, param) {
   const data = Object.assign({}, commonParams, param)
   return instance.post(urlLink, qs.stringify(data))
     .then((res) => {

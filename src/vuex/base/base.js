@@ -11,22 +11,22 @@ const getters = {
 }
 
 const mutations = {
-  [types.SHOW_LOADING](state, payload) {
+  [types.SHOW_LOADING] (state, payload) {
     state.loading = payload.status
   },
-  [types.HIDE_LOADING](state, payload) {
+  [types.HIDE_LOADING] (state, payload) {
     state.loading = payload.status
   }
 }
 
 const actions = {
-  showLoading({commit, state}) {
+  showLoading ({ commit, state }) {
     commit({
       type: types.SHOW_LOADING,
       status: true
     })
   },
-  hideLoading({commit, state}) {
+  hideLoading ({ commit, state }) {
     commit({
       type: types.HIDE_LOADING,
       status: false
