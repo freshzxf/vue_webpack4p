@@ -24,6 +24,19 @@ router.afterEach((to, from, next) => {
   window.scrollTo(0, 0)
 })
 
+// 路由生命周期(拦截)
+// router.beforeEach((to, from, next) => {
+//   if (Util.getStorage('token')) {
+//     to.path === '/' || to.path === '/reg' ? next('/index') : '';
+//     next()
+//   } else {
+//     to.path === '/login' || to.path === '/reg' ? next() : next('/reg');
+//   }
+// })
+// router.afterEach((to, from, next) => {
+//   window.scrollTo(0, 0)
+// })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

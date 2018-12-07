@@ -22,7 +22,9 @@ module.exports = {
   // add your custom rules here 0:close, 1:warning, 2: error
   rules: {
     // 关闭禁止无用表达式校验(因出现无法识别三木运算符中条件表达式，因此暂时关闭此校验)
-    "no-unused-expressions": 0
+    "no-unused-expressions": 0,
+    // 关闭最多允许4位缩进的校验(为配合ide自带的ctrl+alt+l格式化需求)
+    "indent": [0, 4],
    /*
     // allow async-await
     'generator-star-spacing': 0,
